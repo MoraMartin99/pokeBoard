@@ -154,7 +154,7 @@ header {
 }
 
 #menuButton {
-    background-image: url("./Img/menu.svg");
+    background-image: url("./img/menu.svg");
     grid-area: menu;
 }
 
@@ -193,11 +193,11 @@ header {
 }
 
 #searchButton {
-    background-image: url("./Img/search.svg");
+    background-image: url("./img/search.svg");
 }
 
 #notificationButton {
-    background-image: url("./Img/notification.svg");
+    background-image: url("./img/notification.svg");
 }
 
 #avatarMobileContainer {
