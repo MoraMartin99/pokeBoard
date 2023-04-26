@@ -1,0 +1,35 @@
+/* fuentes */
+/* ----------------------------------------------------------------------------------------------- */
+@font-face {
+    font-family: spacegrotesk;
+    src: url(./fonts/WOFF2/SpaceGrotesk-Bold.woff2) format("woff2"),
+        url(./fonts/WOFF/spacegrotesk-bold-webfont.woff) format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: spacegrotesk;
+    src: url(./fonts/WOFF2/SpaceGrotesk-Light.woff2) format("woff2"),
+        url(./fonts/WOFF/spacegrotesk-light-webfont.woff) format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: spacegrotesk;
+    src: url(./fonts/WOFF2/SpaceGrotesk-Medium.woff2) format("woff2"),
+        url(./fonts/WOFF/spacegrotesk-medium-webfont.woff) format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: spacegrotesk;
+    src: url(./fonts/WOFF2/SpaceGrotesk-Regular.woff2) format("woff2"),
+        url(./fonts/WOFF/spacegrotesk-regular-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+/* ----------------------------------------------------------------------------------------------- */
+
