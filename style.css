@@ -33,3 +33,97 @@
 }
 /* ----------------------------------------------------------------------------------------------- */
 
+/* Estilos globales */
+/* ----------------------------------------------------------------------------------------------- */
+
+html {
+    --sidePanelBGColor: #9c65f3;
+    --mainAreaBGColor: #e0cdfe;
+    --sectionTittleColor: #270f4f;
+    --cardTypeColor: #4d2b85;
+    --pokemonCardBoxShadowColor: #887d9e;
+    --itemCardBorderColor: #95b5d2;
+    --itemQuantityColor: #6a00ff;
+    --pokemonCardBGcolor: white;
+    --itemCardBGColor: white;
+    --nearbyCardBGColor: white;
+    --asideBGColor: #0000007a;
+    --githubTitleColor: var(--sectionTittleColor);
+    --menuButtonSize: clamp(25px, 21.6666666667px + 1.0416666666666665vw, 30px);
+    --homeLogoSize: clamp(30px, 26.6666666667px + 1.0416666666666665vw, 35px);
+    --homeTitleFontSize: clamp(0.9375rem, 0.7291666666666667rem + 1.0416666666666665vw, 1.25rem);
+    --homeLinkGap: 6.54px;
+    --avatarMobilePictureSize: calc(var(--menuButtonSize) * (22.5 / 25));
+    --mobileTopButtonsGap: 10px;
+    --headerPadding: 0.6666666666666666em;
+    --headerGap: 15px;
+    --sectionTitleFontSize: 1.25rem;
+    --sectionTitlePadding: 1.25em;
+    --pokemonImgSize: calc((62.12 / 137.5) * 100 * 1cqw);
+    --cardTitleFontSize: calc((10 / 137.5) * 100 * 1cqw);
+    --cardTypeFontSize: calc((8.5 / 137.5) * 100 * 1cqw);
+    --statGroupsWidth: calc(100cqw / 3);
+    --statGroupsHeight: calc((20 / 137.5) * 100 * 1cqw);
+    --pokemonCardGap: 0.29411764705882354em;
+    --pokemonCardBorderRadius: 7.27357365221%;
+    --pokemonCardBoxShadowLength: calc((2.5 / 137.5) * 100 * 1cqw);
+    --statGroupSeparatorWidth: 3.27310814349%;
+    --statGroupSeparatorHeight: 100%;
+    --pokemonContentAreaGap: 15px;
+    --pokemonCardBaseWidth: 8.59375rem;
+    --halfContentAreaPadding: calc(var(--pokemonContentAreaGap) / 2);
+    --itemCardBorderRadiusHorizontal: calc((5 / 135.5) * 100 * 1%);
+    --itemCardBorderRadiusVertical: calc((5 / 32.359) * 100 * 1%);
+    --itemCardImageSpacer: calc((2.19 / 135.5) * 100 * 1%);
+    --itemCardBorderWidth: 1px;
+    --itemTitleFontSize: calc((10 / 135.5) * 100 * 1cqw);
+    --itemImageWidth: calc((30 / 135.5) * 100 * 1%);
+    --nearbyCardBorderRadiusHorizontal: calc((10 / 135.5) * 100 * 1%);
+    --nearbyCardBorderRadiusVertical: calc((10 / 66.76) * 100 * 1%);
+    --nearbyImgWidth: calc((50 / 135.5) * 100 * 1%);
+    --nearbyImgSpacer: calc((9.38 / 135.5) * 100 * 1%);
+    --nearbyTitleFontSize: calc((10 / 135.5) * 100 * 1cqw);
+    --nearbyDistanceFontSize: calc((8 / 135.5) * 100 * 1cqw);
+    --nearbyDistanceIconSize: calc((8.33 / 135.5) * 100 * 1cqw);
+    --githubTitleFontSize: clamp(0.821875rem, 0.32812500000000006rem + 2.4687499999999996vw, 1.5625rem);
+    --githubLinkIconSize: 1.6798479087452471em;
+    --githubLinkPadding: 2.3163498098859314em;
+    --asideMenuContainerFontSize: clamp(0.821875rem, 0.6135416666666668rem + 1.0416666666666663vw, 1.134375rem);
+    --asideMenuContainerPadding: 1.1634980988593155em 1.1634980988593155em 0px 3.2091254752851714em;
+    --returnButtonSize: 1.1634980988593155em;
+    --asideButtonContainerGap: 1.1406844106463878em;
+    --asideButtonsGap: 0.7604562737642585em;
+    --asideButtonsIconSize: 1.6798479087452471em;
+    font-size: 100%;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 0rem;
+    font-family: spacegrotesk, Arial, Verdana, Tahoma, "Trebuchet MS";
+    text-decoration: none;
+    border-style: none;
+}
+
+.hide {
+    display: none;
+}
+
+body {
+    background-color: var(--mainAreaBGColor);
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr max-content;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    position: relative;
+}
+/* ----------------------------------------------------------------------------------------------- */
+
