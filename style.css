@@ -406,3 +406,37 @@ main {
 
 /* ----------------------------------------------------------------------------------------------- */
 
+/* footer */
+/* ----------------------------------------------------------------------------------------------- */
+footer {
+    font-size: var(--githubTitleFontSize);
+    padding-block: var(--githubLinkPadding);
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#githubLink {
+    font-size: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1ch;
+}
+
+#githubLink::before {
+    font-size: inherit;
+    content: "";
+    width: var(--githubLinkIconSize);
+    height: var(--githubLinkIconSize);
+    background-image: url("./img/github\ purple.svg");
+    background-size: 100%;
+}
+
+#githubTitle {
+    font-size: inherit;
+    color: var(--githubTitleColor);
+    font-weight: 700;
+}
+/* ----------------------------------------------------------------------------------------------- */
