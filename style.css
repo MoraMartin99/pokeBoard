@@ -127,3 +127,94 @@ body {
 }
 /* ----------------------------------------------------------------------------------------------- */
 
+/* header */
+/* ----------------------------------------------------------------------------------------------- */
+
+header {
+    font-size: var(--homeTitleFontSize);
+    padding-block: var(--headerPadding);
+    grid-area: header;
+    background-color: var(--sidePanelBGColor);
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns:
+        var(--headerGap) max-content var(--headerGap) max-content 1fr max-content
+        var(--headerGap);
+    grid-template-areas: ". menu . home . topIcons .";
+    align-items: center;
+}
+
+.menuButtons {
+    width: var(--menuButtonSize);
+    height: var(--menuButtonSize);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+#menuButton {
+    background-image: url("./Img/menu.svg");
+    grid-area: menu;
+}
+
+#leftHeaderContainer {
+    font-size: var(--homeTitleFontSize);
+    grid-area: home;
+}
+
+#homeLink {
+    font-size: inherit;
+    display: inline-flex;
+    flex-direction: row;
+    gap: var(--homeLinkGap);
+    align-items: center;
+}
+
+#homeLogo {
+    width: var(--homeLogoSize);
+    height: var(--homeLogoSize);
+}
+
+#homeTitle {
+    font-size: inherit;
+    font-weight: 700;
+    color: white;
+}
+
+#rightHeaderContainer {
+    grid-area: topIcons;
+}
+
+#mobileTopButtons {
+    display: inline-flex;
+    flex-direction: row;
+    gap: var(--mobileTopButtonsGap);
+}
+
+#searchButton {
+    background-image: url("./Img/search.svg");
+}
+
+#notificationButton {
+    background-image: url("./Img/notification.svg");
+}
+
+#avatarMobileContainer {
+    display: inline-flex;
+    width: var(--menuButtonSize);
+    height: var(--menuButtonSize);
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#avatarMobilePicture {
+    width: var(--avatarMobilePictureSize);
+    height: var(--avatarMobilePictureSize);
+}
+
+/* ----------------------------------------------------------------------------------------------- */
+
