@@ -559,6 +559,109 @@ main {
 }
 
 /* ----------------------------------------------------------------------------------------------- */
+
+/* Aside */
+/* ----------------------------------------------------------------------------------------------- */
+aside {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--asideBGColor);
+    z-index: 1;
+}
+
+#asideMenuContainer {
+    background-color: var(--mainAreaBGColor);
+    font-size: var(--asideMenuContainerFontSize);
+    padding: var(--asideMenuContainerPadding);
+    height: 100%;
+    display: inline-grid;
+    grid-template-columns: max-content 1fr max-content;
+    grid-template-rows: repeat(2, max-content);
+    grid-template-areas:
+        ". . arrow"
+        "menu . .";
+}
+
+#returnButton {
+    grid-area: arrow;
+    font-size: inherit;
+    width: var(--returnButtonSize);
+    height: var(--returnButtonSize);
+    background-color: inherit;
+    background-image: url("./img/arrow.svg");
+    background-size: 100%;
+}
+
+#asideButtonContainer {
+    font-size: inherit;
+    grid-area: menu;
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, max-content);
+    justify-content: start;
+    gap: var(--asideButtonContainerGap);
+}
+
+.asideButtons {
+    font-size: inherit;
+    background-color: inherit;
+    display: flex;
+    flex-direction: row;
+    gap: var(--asideButtonsGap);
+    align-items: center;
+}
+
+.asideButtons::before {
+    font-size: inherit;
+    content: "";
+    width: var(--asideButtonsIconSize);
+    height: var(--asideButtonsIconSize);
+    background-size: 100%;
+}
+
+.asideButtonLabel {
+    font-size: inherit;
+    color: var(--sectionTittleColor);
+    font-weight: 700;
+}
+
+#asideHomeButton::before {
+    background-image: url("./img/home\ mobile.svg");
+}
+
+#asideProfileButton::before {
+    background-image: url("./img/profile\ mobile.svg");
+}
+
+#asideMessagesButton::before {
+    background-image: url("./img/message\ mobile.svg");
+}
+
+#asideHistoryButton::before {
+    background-image: url("./img/history\ mobile.svg");
+}
+
+#asideSettingsButton::before {
+    background-image: url("./img/settings\ mobile.svg");
+}
+
+#asideTasksButton::before {
+    background-image: url("./img/task\ mobile.svg");
+}
+
+#asideSupportButton::before {
+    background-image: url("img/support\ mobile.svg");
+}
+
+#asideCommunitiesButton::before {
+    background-image: url("./img/communities\ mobile.svg");
+}
+
+#asidePrivacyButton::before {
+    background-image: url("./img/privacy\ mobile.svg");
+}
+
 /* ----------------------------------------------------------------------------------------------- */
 
 /* footer */
