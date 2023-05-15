@@ -418,6 +418,14 @@ main {
     grid-area: itemArea;
 }
 
+.halfContentAreas {
+    padding: var(--pokemonContentAreaGap);
+    padding-bottom: 0px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(var(--pokemonCardBaseWidth), 1fr));
+    grid-auto-rows: max-content;
+}
 
 #itemContentArea {
     padding-right: var(--halfContentAreaPadding);
