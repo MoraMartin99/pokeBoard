@@ -418,6 +418,70 @@ main {
     grid-area: itemArea;
 }
 
+
+#itemContentArea {
+    padding-right: var(--halfContentAreaPadding);
+}
+
+.itemCard {
+    aspect-ratio: 137.5 / 34.37;
+    border-radius: var(--itemCardBorderRadiusHorizontal) / var(--itemCardBorderRadiusVertical);
+    display: inline-grid;
+    grid-template-columns:
+        1fr max-content 1fr var(--itemImageWidth)
+        var(--itemCardImageSpacer);
+    grid-template-rows: max-content;
+    grid-template-areas: ". text . image .";
+    background-color: var(--itemCardBGColor);
+    border: var(--itemCardBorderWidth) solid var(--itemCardBorderColor);
+    align-content: center;
+    align-items: center;
+    container-type: size;
+    container-name: itemCard;
+}
+
+.itemTextContainer {
+    grid-area: text;
+    display: inline-grid;
+    grid-template-columns: repeat(3, max-content);
+    grid-template-rows: max-content;
+    grid-template-areas: "L C R";
+}
+
+.itemTitle {
+    color: var(--sectionTittleColor);
+    font-weight: 400;
+    grid-area: L;
+}
+
+.itemTextContainer::after {
+    content: "X";
+    color: var(--itemQuantityColor);
+    font-weight: 400;
+    margin-inline: 0.5ch;
+    grid-area: C;
+}
+
+.itemQuantity {
+    color: var(--itemQuantityColor);
+    font-weight: 400;
+    grid-area: R;
+}
+
+.itemImage {
+    grid-area: image;
+    /* width: var(--itemImageWidth); */
+    width: 100%;
+}
+
+@container itemCard (min-width: 1px) {
+    .itemTitle,
+    .itemTextContainer::after,
+    .itemQuantity {
+        font-size: var(--itemTitleFontSize);
+    }
+}
+
 #nearbySection {
     grid-area: nearbyArea;
 }
