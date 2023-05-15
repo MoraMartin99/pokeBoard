@@ -486,6 +486,79 @@ main {
     grid-area: nearbyArea;
 }
 
+#nearbycontentArea {
+    padding-left: var(--halfContentAreaPadding);
+}
+
+.nearbyCard {
+    aspect-ratio: 137.5 / 68.76;
+    background-color: var(--nearbyCardBGColor);
+    border-radius: var(--nearbyCardBorderRadiusHorizontal) / var(--nearbyCardBorderRadiusVertical);
+    border: var(--itemCardBorderWidth) solid var(--itemCardBorderColor);
+    display: inline-grid;
+    grid-template-columns: 1fr max-content 1fr var(--nearbyImgWidth) var(--nearbyImgSpacer);
+    grid-template-rows: max-content;
+    grid-template-areas: ". text . image .";
+    align-content: center;
+    container-type: inline-size;
+    container-name: nearbyCard;
+}
+
+.nearbyLeftGroup {
+    grid-area: text;
+    display: inline-grid;
+    grid-template-columns: max-content;
+    grid-template-rows: repeat(2, max-content);
+    gap: 0.5ch;
+    align-content: center;
+}
+
+.nearbyTitle {
+    font-size: inherit;
+    color: var(--sectionTittleColor);
+    font-weight: 500;
+}
+
+.nearbyDistanceGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.3ch;
+}
+
+.nearbyDistanceGroup::before {
+    content: "";
+    background-image: url("./img/compass.svg");
+    background-size: 100%;
+}
+
+.nearbyDistance {
+    font-size: inherit;
+    font-weight: 400;
+    color: var(--cardTypeColor);
+}
+
+.nearbyImg {
+    grid-area: image;
+    width: 100%;
+}
+
+@container nearbyCard (min-width: 1px) {
+    .nearbyLeftGroup {
+        font-size: var(--nearbyTitleFontSize);
+    }
+
+    .nearbyDistanceGroup {
+        font-size: var(--nearbyDistanceFontSize);
+    }
+
+    .nearbyDistanceGroup::before {
+        width: var(--nearbyDistanceIconSize);
+        height: var(--nearbyDistanceIconSize);
+    }
+}
+
+/* ----------------------------------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------------------------- */
 
 /* footer */
