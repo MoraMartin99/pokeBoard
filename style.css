@@ -748,3 +748,433 @@ footer {
 }
 /* ----------------------------------------------------------------------------------------------- */
 
+/* Breakpoint 1024px = 64em */
+/* ----------------------------------------------------------------------------------------------- */
+@media (min-width: 64rem) {
+    /* Estilos globales */
+    /* ----------------------------------------- */
+    html {
+        --bottomButtonColor: white;
+        --bottomButtonBGColor: #451985;
+        --avatarBigContainerColor1: #270e4e;
+        --avatarBigContainerColor2: #4d2a84;
+        --topPanelBGColor: white;
+        --topUserNameColor: #270e4e;
+        --githubTitleColor: white;
+        --sidePanelWidth: calc((254 / 16) * 1rem);
+        --homeTitleFontSize: calc((21.21 / 16) * 1rem);
+        --homeLogoSize: 49.85px;
+        --homeLinkGap: calc((12 / 21.21) * 1em);
+        --centerHeaderContainerGap: 24.1px;
+        --searchBarWidth: 293.88px;
+        --searchBarHeight: calc((21.37 / 293.88) * var(--searchBarWidth));
+        --searchBarBorderRadiusHorizontal: calc((21.37 / 293.88) * var(--searchBarWidth));
+        --searchBarBorderRadiusVertical: calc((21.37 / 21.37) * var(--searchBarHeight));
+        --searchContainerGap: calc(var(--searchBarWidth) * (8.01 / 293.88));
+        --searchBarButtonSize: calc(var(--searchBarWidth) * (18.7 / 293.88));
+        --avatarDesktopContainerSize: 53.43px;
+        --avatarDesktopPictureSize: calc(var(--avatarDesktopContainerSize) * (48.09 / 53.43));
+        --avatarBigContainerFontSize: 13.36px;
+        --userNameFontSize: calc(1em * (18.7 / 13.36));
+        --leftHeaderContainerPaddingLeft: calc(1em * (9.46 / 21.21));
+        --leftHeaderContainerPaddingTop: calc(1em * (38.07 / 21.21));
+        --centerHeaderContainerPaddingLeft: 33px;
+        --centerHeaderContainerPaddingTop: 10px;
+        --menuButtonSize: calc(var(--topUserNameFontSize) * (18.7 / 10.69));
+        --avatarMobileContainerSize: calc(var(--topUserNameFontSize) * (26.72 / 10.69));
+        --avatarMobilePictureSize: calc(var(--avatarMobileContainerSize) * (24.04 / 26.72));
+        --topUserNameFontSize: calc(1rem * (10.69 / 16));
+        --mobileTopButtonsGap: calc(1em * (8 / 10.69));
+        --bottomButtonFontSize: calc(1rem * (10.69 / 16));
+        --bottomButtonWidth: calc(1em * (66.79 / 10.69));
+        --bottomButtonHeight: calc(1em * (26.72 / 10.69));
+        --bottomButtonBorderRadius: calc(1em * (26.72 / 10.69));
+        --rightHeaderContainerGap: 45.46px;
+        --bottomButtonGap: calc(1em * (8 / 10.69));
+        --avatarBigContainerColumnGap: calc(1em * (8 / 13.36));
+        --headerMinHeight: 133px;
+        --asideMenuContainerPadding: 0px;
+        --asideMenuContainerFontSize: calc(1rem * (17 / 16));
+        --asideButtonContainerGap: calc(1em * (10 / 17));
+        --asideButtonContainerPaddingTop: calc(1em * (26.06 / 17));
+        --asideButtonContainerPaddingLeft: calc(1em * (36 / 17));
+        --githubTitleFontSize: calc(1rem * (18 / 16));
+        --githubLinkIconSize: calc(1em * (22.28 / 18));
+        --githubLinkPadding: 0px;
+        --githubLinkPaddingBottom: 30px;
+        --footerMinHeight: 112.28px;
+        --contentAreaPadding: 0px;
+        --pokemonContentAreaGap: 32.5px;
+        --pokemonCardBaseWidth: calc(1rem * (213.33 / 16));
+        --halfContentAreasPaddingBottom: 15px;
+        --columnTitlePaddingLeft: 18px;
+        --sectionTitleFontSize: calc(1rem * (24 / 16));
+        --sectionTitlePadding: 0px;
+        --pokemonSectionTitlePaddingLeft: 60px;
+        --titleAreaMinHeight: 89px;
+    }
+
+    #menuButton,
+    #searchButton,
+    #returnButton {
+        display: none;
+    }
+
+    body {
+        grid-template-columns: max-content 1fr;
+        grid-template-rows: max-content 1fr max-content;
+        grid-template-areas:
+            "header header"
+            "aside main"
+            "footer main";
+    }
+    /* ----------------------------------------- */
+
+    /* Header */
+    /* ----------------------------------------- */
+    header {
+        min-height: var(--headerMinHeight);
+        padding: 0px;
+        background-color: var(--topPanelBGColor);
+        grid-template-columns: var(--sidePanelWidth) 1fr max-content;
+        grid-template-rows: 1fr;
+        grid-template-areas: "left center right";
+    }
+
+    #leftHeaderContainer {
+        padding-left: var(--leftHeaderContainerPaddingLeft);
+        padding-top: var(--leftHeaderContainerPaddingTop);
+        grid-area: left;
+        height: 100%;
+        background-color: var(--sidePanelBGColor);
+    }
+
+    #centerHeaderContainer {
+        padding-left: var(--centerHeaderContainerPaddingLeft);
+        padding-top: var(--centerHeaderContainerPaddingTop);
+        height: 100%;
+        grid-area: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, max-content);
+        grid-template-areas:
+            "top"
+            "bottom";
+        row-gap: var(--centerHeaderContainerGap);
+        align-content: start;
+    }
+
+    #searchContainer {
+        grid-area: top;
+        display: flex;
+        flex-direction: row;
+        gap: var(--searchContainerGap);
+    }
+
+    #searchBarButton {
+        width: var(--searchBarButtonSize);
+        height: var(--searchBarButtonSize);
+        background-image: url("./img/search.svg");
+        background-size: 100%;
+        background-color: inherit;
+    }
+
+    #searchBar {
+        width: var(--searchBarWidth);
+        height: var(--searchBarHeight);
+        background-color: var(--mainAreaBGColor);
+        border-radius: var(--searchBarBorderRadiusHorizontal) / var(--searchBarBorderRadiusVertical);
+    }
+
+    #avatarBigContainer {
+        font-size: var(--avatarBigContainerFontSize);
+        grid-area: bottom;
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        grid-template-rows: repeat(3, max-content);
+        grid-template-areas:
+            "avatar welcome"
+            "avatar name"
+            "avatar id";
+        column-gap: var(--avatarBigContainerColumnGap);
+    }
+
+    #avatarDesktopContainer {
+        grid-area: avatar;
+        width: var(--avatarDesktopContainerSize);
+        height: var(--avatarDesktopContainerSize);
+        background-color: var(--sidePanelBGColor);
+        border-radius: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #avatarDesktopPicture {
+        width: var(--avatarDesktopPictureSize);
+    }
+
+    #welcomeText {
+        grid-area: welcome;
+        font-size: inherit;
+        font-weight: 700;
+        color: var(--avatarBigContainerColor1);
+    }
+
+    #userName {
+        grid-area: name;
+        font-size: var(--userNameFontSize);
+        font-weight: 700;
+        color: var(--avatarBigContainerColor1);
+    }
+
+    #userID {
+        color: var(--avatarBigContainerColor2);
+        grid-area: id;
+        font-size: inherit;
+        font-weight: 500;
+    }
+
+    #rightHeaderContainer {
+        padding-top: var(--centerHeaderContainerPaddingTop);
+        padding-right: var(--centerHeaderContainerPaddingLeft);
+        grid-area: right;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        row-gap: var(--rightHeaderContainerGap);
+    }
+
+    #mobileTopButtons {
+        font-size: var(--topUserNameFontSize);
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    #avatarMobileContainer {
+        width: var(--avatarMobileContainerSize);
+        height: var(--avatarMobileContainerSize);
+        background-color: var(--sidePanelBGColor);
+    }
+
+    #topUserName {
+        color: var(--topUserNameColor);
+        display: block;
+        font-size: inherit;
+        font-weight: 700;
+    }
+
+    #bottomButtonsContainer {
+        font-size: var(--bottomButtonFontSize);
+        display: flex;
+        flex-direction: row;
+        column-gap: var(--bottomButtonGap);
+    }
+
+    .bottomButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--bottomButtonWidth);
+        height: var(--bottomButtonHeight);
+        border-radius: var(--bottomButtonBorderRadius);
+        font-size: inherit;
+        font-weight: 700;
+        color: var(--bottomButtonColor);
+        background-color: var(--bottomButtonBGColor);
+    }
+    /* ----------------------------------------- */
+
+    /* Aside */
+    /* ----------------------------------------- */
+    #asideMenu {
+        position: static;
+        display: grid;
+    }
+
+    #asideMenuContainer {
+        display: block;
+        background-color: var(--sidePanelBGColor);
+    }
+
+    #asideButtonContainer {
+        width: var(--sidePanelWidth);
+        height: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, max-content) 1fr repeat(3, max-content);
+        grid-template-areas:
+            "Home"
+            "Profile"
+            "Messages"
+            "History"
+            "Tasks"
+            "Communities"
+            "."
+            "Settings"
+            "Support"
+            "Privacy";
+        padding-top: var(--asideButtonContainerPaddingTop);
+        padding-left: var(--asideButtonContainerPaddingLeft);
+    }
+
+    #asideHomeButton {
+        grid-area: Home;
+    }
+
+    #asideHomeButton::before {
+        background-image: url("./img/home.svg");
+    }
+
+    #asideProfileButton {
+        grid-area: Profile;
+    }
+
+    #asideProfileButton::before {
+        background-image: url("./img/profile.svg");
+    }
+
+    #asideMessagesButton {
+        grid-area: Messages;
+    }
+
+    #asideMessagesButton::before {
+        background-image: url("./img/message.svg");
+    }
+
+    #asideHistoryButton {
+        grid-area: History;
+    }
+
+    #asideHistoryButton::before {
+        background-image: url("./img/history.svg");
+    }
+
+    #asideSettingsButton {
+        grid-area: Settings;
+    }
+
+    #asideSettingsButton::before {
+        background-image: url("./img/settings.svg");
+    }
+
+    #asideTasksButton {
+        grid-area: Tasks;
+    }
+
+    #asideTasksButton::before {
+        background-image: url("./img/task.svg");
+    }
+
+    #asideSupportButton {
+        grid-area: Support;
+    }
+
+    #asideSupportButton::before {
+        background-image: url("./img/support.svg");
+    }
+
+    #asideCommunitiesButton {
+        grid-area: Communities;
+    }
+
+    #asideCommunitiesButton::before {
+        background-image: url("./img/communities.svg");
+    }
+
+    #asidePrivacyButton {
+        grid-area: Privacy;
+    }
+
+    #asidePrivacyButton::before {
+        background-image: url("./img/privacy.svg");
+    }
+
+    .asideButtonLabel {
+        color: white;
+    }
+    /* ----------------------------------------- */
+
+    /* Footer */
+    /* ----------------------------------------- */
+    footer {
+        display: grid;
+        background-color: var(--sidePanelBGColor);
+        min-height: var(--footerMinHeight);
+        grid-template-columns: max-content;
+        grid-template-rows: 1fr max-content var(--githubLinkPaddingBottom);
+        grid-template-areas:
+            "."
+            "github"
+            ".";
+        justify-content: center;
+    }
+
+    #githubLink {
+        grid-area: github;
+        display: block;
+        position: relative;
+    }
+
+    #githubLink::before {
+        position: absolute;
+        transform: translateX(calc(-100% - 1ch));
+        background-image: url("./img/github.svg");
+    }
+    /* ----------------------------------------- */
+
+    /* Estilar main */
+    /* ----------------------------------------- */
+    main {
+        grid-template-columns: 1fr max-content;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "pokemonArea itemArea"
+            "pokemonArea nearbyArea";
+    }
+
+    .mainSections {
+        grid-template-rows: 1fr max-content;
+    }
+
+    #itemContentArea,
+    #nearbycontentArea {
+        padding: 0px;
+        padding-right: var(--pokemonContentAreaGap);
+        padding-bottom: var(--halfContentAreasPaddingBottom);
+        grid-template-columns: var(--pokemonCardBaseWidth);
+    }
+
+    .columnTitle {
+        padding-top: 0px;
+        padding-left: var(--columnTitlePaddingLeft);
+        justify-content: flex-start;
+        column-gap: 0.5ch;
+    }
+
+    .containerQ {
+        display: flex;
+        align-items: center;
+    }
+
+    #pokemonContentArea {
+        padding: var(--pokemonContentAreaGap);
+    }
+
+    .titleArea {
+        min-height: var(--titleAreaMinHeight);
+    }
+
+    #pokemonSection > .titleArea {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+
+    #pokemonSectionTitle {
+        padding-left: var(--pokemonSectionTitlePaddingLeft);
+    }
+    /* ----------------------------------------- */
+}
+/* ----------------------------------------------------------------------------------------------- */
