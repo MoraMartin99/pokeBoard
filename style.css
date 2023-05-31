@@ -706,3 +706,45 @@ footer {
     font-weight: 700;
 }
 /* ----------------------------------------------------------------------------------------------- */
+
+/* Breakpoint 600px = 37.5em */
+/* ----------------------------------------------------------------------------------------------- */
+@media (min-width: 37.5em) {
+    /* Estilos globales */
+    /* ----------------------------------------- */
+    html {
+        --contentAreaPadding: calc((100 / 600) * 100%);
+        --pokemonCardBaseWidth: calc((192.5 / 16) * 1rem);
+    }
+    /* ----------------------------------------- */
+
+    /* Main */
+    /* ----------------------------------------- */
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr max-content 1fr max-content 1fr max-content 1fr;
+        grid-template-areas:
+            "."
+            "pokemonArea"
+            "."
+            "itemArea"
+            "."
+            "nearbyArea"
+            ".";
+    }
+
+    #pokemonContentArea,
+    #itemContentArea,
+    #nearbycontentArea {
+        padding-inline: var(--contentAreaPadding);
+    }
+
+    .sectionTitle {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    /* ----------------------------------------- */
+}
+/* ----------------------------------------------------------------------------------------------- */
+
