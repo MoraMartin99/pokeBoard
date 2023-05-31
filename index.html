@@ -12,15 +12,39 @@
     <body>
         <header>
             <button id="menuButton" class="menuButtons"></button>
-            <a href="" id="homeLink">
-                <img src="./img/logo.svg" alt="home logo" id="homeLogo" />
-                <p id="homeTitle">pokeBoard</p>
-            </a>
-            <div id="mobileTopButtons">
-                <button id="searchButton" class="menuButtons"></button>
-                <button id="notificationButton" class="menuButtons"></button>
-                <div id="avatarMobileContainer">
-                    <img src="./img/frog avatar.svg" alt="avatar" id="avatarMobilePicture" />
+            <div id="leftHeaderContainer">
+                <a href="" id="homeLink">
+                    <img src="./img/logo.svg" alt="home logo" id="homeLogo" />
+                    <p id="homeTitle">pokeBoard</p>
+                </a>
+            </div>
+            <div id="centerHeaderContainer" class="hide">
+                <div id="searchContainer">
+                    <button id="searchBarButton"></button>
+                    <input type="search" id="searchBar" />
+                </div>
+                <div id="avatarBigContainer">
+                    <div id="avatarDesktopContainer">
+                        <img src="./img/frog avatar.svg" alt="avatar" id="avatarDesktopPicture" />
+                    </div>
+                    <p id="welcomeText">hi there,</p>
+                    <p id="userName">Ash Ketchum</p>
+                    <p id="userID">@pokeboy</p>
+                </div>
+            </div>
+            <div id="rightHeaderContainer">
+                <div id="mobileTopButtons">
+                    <button id="searchButton" class="menuButtons"></button>
+                    <button id="notificationButton" class="menuButtons"></button>
+                    <div id="avatarMobileContainer">
+                        <img src="./img/frog avatar.svg" alt="avatar" id="avatarMobilePicture" />
+                    </div>
+                    <p id="topUserName" class="hide">Ash Ketchum</p>
+                </div>
+                <div id="bottomButtonsContainer" class="hide">
+                    <button id="newButton" class="bottomButton">New</button>
+                    <button id="uploadButton" class="bottomButton">Upload</button>
+                    <button id="shareButton" class="bottomButton">Share</button>
                 </div>
             </div>
         </header>
