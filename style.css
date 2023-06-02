@@ -761,57 +761,58 @@ footer {
         --topPanelBGColor: white;
         --topUserNameColor: #270e4e;
         --githubTitleColor: white;
-        --sidePanelWidth: calc((254 / 16) * 1rem);
-        --homeTitleFontSize: calc((21.21 / 16) * 1rem);
-        --homeLogoSize: 49.85px;
+        --sidePanelWidth: clamp(15.875rem, -0.26785714285714235rem + 25.223214285714285vw, 30rem);
+        --homeTitleFontSize: clamp(1.325625rem, -0.01651785714285703rem + 2.0970982142857144vw, 2.5rem);
+        --homeLogoSize: calc(1em * (49.85 / 21.21));
         --homeLinkGap: calc((12 / 21.21) * 1em);
-        --centerHeaderContainerGap: 24.1px;
-        --searchBarWidth: 293.88px;
+        --centerHeaderContainerGap: clamp(24.1px, -0.9285714285714235px + 2.4441964285714284vw, 46px);
+        --searchBarWidth: clamp(293.88px, 1.171428571428578px + 28.584821428571427vw, 550px);
         --searchBarHeight: calc((21.37 / 293.88) * var(--searchBarWidth));
         --searchBarBorderRadiusHorizontal: calc((21.37 / 293.88) * var(--searchBarWidth));
         --searchBarBorderRadiusVertical: calc((21.37 / 21.37) * var(--searchBarHeight));
         --searchContainerGap: calc(var(--searchBarWidth) * (8.01 / 293.88));
         --searchBarButtonSize: calc(var(--searchBarWidth) * (18.7 / 293.88));
-        --avatarDesktopContainerSize: 53.43px;
+        --avatarDesktopContainerSize: clamp(53.43px, 0.012946428571428914rem + 5.197544642857142vw, 100px);
         --avatarDesktopPictureSize: calc(var(--avatarDesktopContainerSize) * (48.09 / 53.43));
-        --avatarBigContainerFontSize: 13.36px;
+        --avatarBigContainerFontSize: clamp(0.835rem, 0.0035714285714285587rem + 1.2991071428571428vw, 1.5625rem);
         --userNameFontSize: calc(1em * (18.7 / 13.36));
         --leftHeaderContainerPaddingLeft: calc(1em * (9.46 / 21.21));
-        --leftHeaderContainerPaddingTop: calc(1em * (38.07 / 21.21));
+        --leftHeaderContainerPaddingTop: clamp(2.379375rem, 2.0986607142857143rem + 0.4386160714285714vw, 2.625rem);
         --centerHeaderContainerPaddingLeft: 33px;
-        --centerHeaderContainerPaddingTop: 10px;
+        --centerHeaderContainerPaddingTop: clamp(10px, 4.2857142857142865px + 0.5580357142857142vw, 15px);
         --menuButtonSize: calc(var(--topUserNameFontSize) * (18.7 / 10.69));
         --avatarMobileContainerSize: calc(var(--topUserNameFontSize) * (26.72 / 10.69));
         --avatarMobilePictureSize: calc(var(--avatarMobileContainerSize) * (24.04 / 26.72));
-        --topUserNameFontSize: calc(1rem * (10.69 / 16));
+        --topUserNameFontSize: clamp(0.668125rem, 0.0031249999999999334rem + 1.0390625vw, 1.25rem);
         --mobileTopButtonsGap: calc(1em * (8 / 10.69));
-        --bottomButtonFontSize: calc(1rem * (10.69 / 16));
+        --bottomButtonFontSize: var(--topUserNameFontSize);
         --bottomButtonWidth: calc(1em * (66.79 / 10.69));
         --bottomButtonHeight: calc(1em * (26.72 / 10.69));
         --bottomButtonBorderRadius: calc(1em * (26.72 / 10.69));
-        --rightHeaderContainerGap: 45.46px;
+        --rightHeaderContainerGap: clamp(45.46px, -0.8714285714285666px + 4.524553571428571vw, 86px);
         --bottomButtonGap: calc(1em * (8 / 10.69));
         --avatarBigContainerColumnGap: calc(1em * (8 / 13.36));
-        --headerMinHeight: 133px;
+        --headerMinHeight: clamp(133px, 38.14285714285715px + 9.263392857142856vw, 216px);
         --asideMenuContainerPadding: 0px;
-        --asideMenuContainerFontSize: calc(1rem * (17 / 16));
+        --asideMenuContainerFontSize: clamp(1.0625rem, 0.4910714285714286rem + 0.8928571428571428vw, 1.5625rem);
         --asideButtonContainerGap: calc(1em * (10 / 17));
-        --asideButtonContainerPaddingTop: calc(1em * (26.06 / 17));
-        --asideButtonContainerPaddingLeft: calc(1em * (36 / 17));
-        --githubTitleFontSize: calc(1rem * (18 / 16));
-        --githubLinkIconSize: calc(1em * (22.28 / 18));
+        --asideButtonContainerPaddingTop: clamp(0px, 3.4901785714285714rem + -2.9084821428571423vw, 26.06px);
+        --asideButtonContainerPaddingLeft: clamp(2.25rem, -0.03571428571428559rem + 3.571428571428571vw, 4.25rem);
+        --githubTitleFontSize: clamp(1.125rem, 0.625rem + 0.78125vw, 1.5625rem);
+        --githubLinkIconSize: clamp(1.3925rem, -0.016071428571428292rem + 2.2008928571428568vw, 2.625rem);
         --githubLinkPadding: 0px;
-        --githubLinkPaddingBottom: 30px;
-        --footerMinHeight: 112.28px;
+        --githubLinkPaddingBottom: clamp(30px, 16.285714285714285px + 1.3392857142857142vw, 42px);
+        --footerMinHeight: clamp(112.28px, -5.1142857142857px + 11.464285714285714vw, 215px);
         --contentAreaPadding: 0px;
         --pokemonContentAreaGap: 32.5px;
-        --pokemonCardBaseWidth: calc(1rem * (213.33 / 16));
+        --pokemonCardBaseWidth: clamp(13.333125rem, 4.85669642857143rem + 13.244419642857142vw, 20.75rem);
         --halfContentAreasPaddingBottom: 15px;
         --columnTitlePaddingLeft: 18px;
-        --sectionTitleFontSize: calc(1rem * (24 / 16));
+        --sectionTitleFontSize: clamp(1.5rem, 1.0714285714285714rem + 0.6696428571428571vw, 1.875rem);
         --sectionTitlePadding: 0px;
         --pokemonSectionTitlePaddingLeft: 60px;
         --titleAreaMinHeight: 89px;
+        --itemNearbyCardBaseWidth: clamp(13.333125rem, 8.463839285714288rem + 7.608258928571426vw, 17.59375rem);
     }
 
     #menuButton,
@@ -847,6 +848,10 @@ footer {
         grid-area: left;
         height: 100%;
         background-color: var(--sidePanelBGColor);
+    }
+
+    #homeLogo {
+        font-size: inherit;
     }
 
     #centerHeaderContainer {
@@ -1112,7 +1117,6 @@ footer {
 
     #githubLink {
         grid-area: github;
-        display: block;
         position: relative;
     }
 
@@ -1134,7 +1138,15 @@ footer {
     }
 
     .mainSections {
+        grid-template-rows: max-content max-content;
+    }
+
+    #pokemonSection {
         grid-template-rows: 1fr max-content;
+    }
+
+    #itemSection {
+        align-self: self-end;
     }
 
     #itemContentArea,
@@ -1142,7 +1154,7 @@ footer {
         padding: 0px;
         padding-right: var(--pokemonContentAreaGap);
         padding-bottom: var(--halfContentAreasPaddingBottom);
-        grid-template-columns: var(--pokemonCardBaseWidth);
+        grid-template-columns: var(--itemNearbyCardBaseWidth);
     }
 
     .columnTitle {
