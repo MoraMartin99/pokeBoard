@@ -445,7 +445,7 @@ main {
     border: var(--itemCardBorderWidth) solid var(--itemCardBorderColor);
     align-content: center;
     align-items: center;
-    container-type: size;
+    container-type: inline-size;
     container-name: itemCard;
 }
 
@@ -565,6 +565,45 @@ main {
         width: var(--nearbyDistanceIconSize);
         height: var(--nearbyDistanceIconSize);
     }
+}
+
+.cardLoading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingImage {
+    animation-name: loadingPokeball;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes loadingPokeball {
+    from {
+        filter: grayscale(1);
+    }
+    50% {
+        transform: rotate(0.5turn) scale(1.35);
+        filter: grayscale(0);
+    }
+    to {
+        transform: rotate(1turn);
+        filter: grayscale(1);
+    }
+}
+
+#pokemonContentArea .loadingImage {
+    width: 15%;
+}
+
+#itemContentArea .loadingImage {
+    width: 10%;
+}
+
+#nearbycontentArea .loadingImage {
+    width: 15%;
 }
 
 /* ----------------------------------------------------------------------------------------------- */

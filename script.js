@@ -36,6 +36,12 @@ const getRandomNumberArr = (min, max, n) => {
     }
     return arr;
 };
+
+const removeClass = (element, classArr) => {
+    classArr.forEach((currentClass) => {
+        element.classList.remove(currentClass);
+    });
+};
 /* ----------------------------------------------------------------------------------------------------------------- */
 
 /* Funciones para obtener objetos */
@@ -275,14 +281,17 @@ async function loadCards() {
     const nearbyCardObjArr = await getCardObjArr(nearbyCardNumber, nearbyCardBaseURL, getNearbyCardObj);
 
     pokemonCardArr.forEach((card, index) => {
+        removeClass(card, ["cardLoading"]);
         setPokemonCard(card, pokemonCardObjArr[index]);
     });
 
     itemCardArr.forEach((card, index) => {
+        removeClass(card, ["cardLoading"]);
         setItemCard(card, itemCardObjArr[index]);
     });
 
     nearbyCardArr.forEach((card, index) => {
+        removeClass(card, ["cardLoading"]);
         setNearbyCard(card, nearbyCardObjArr[index]);
     });
 }
