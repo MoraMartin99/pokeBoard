@@ -3,6 +3,10 @@
 const pokemonCardArr = Array.from(document.querySelectorAll(".pokemonCard"));
 const itemCardArr = Array.from(document.querySelectorAll(".itemCard"));
 const nearbyCardArr = Array.from(document.querySelectorAll(".nearbyCard"));
+const menuButton = document.querySelector("#menuButton");
+const returnButton = document.querySelector("#returnButton");
+const asideMenu = document.querySelector("#asideMenu");
+const asideMenuContainer = document.querySelector("#asideMenuContainer");
 /* ----------------------------------------------------------------------------------------------------------------- */
 
 /* Funciones de bajo nivel */
@@ -40,6 +44,12 @@ const getRandomNumberArr = (min, max, n) => {
 const removeClass = (element, classArr) => {
     classArr.forEach((currentClass) => {
         element.classList.remove(currentClass);
+    });
+};
+
+const addClass = (element, classArr) => {
+    classArr.forEach((currentClass) => {
+        element.classList.add(currentClass);
     });
 };
 /* ----------------------------------------------------------------------------------------------------------------- */
@@ -295,6 +305,36 @@ async function loadCards() {
         setNearbyCard(card, nearbyCardObjArr[index]);
     });
 }
+
+const showAsideMenu = (e) => {
+    removeClass(asideMenu, ["hide"]);
+};
+
+const hideasideMenuContainer = (e) => {
+    const target = e.target;
+
+    if (target.matches("#returnButton") || target.matches("#asideMenu")) {
+        addClass(asideMenuContainer, ["slideOut"]);
+        addClass(asideMenu, ["fadeOut"]);
+    }
+};
+
+const hideAsideMenu = (e) => {
+    const animationName = e.animationName;
+
+    if (animationName === "slideOut") {
+        removeClass(asideMenuContainer, ["slideOut"]);
+        removeClass(asideMenu, ["fadeOut"]);
+        addClass(asideMenu, ["hide"]);
+    }
+};
+/* ----------------------------------------------------------------------------------------------------------------- */
+
+/* Event listener */
+/* ----------------------------------------------------------------------------------------------------------------- */
+menuButton.addEventListener("click", showAsideMenu);
+asideMenu.addEventListener("click", hideasideMenuContainer);
+asideMenuContainer.addEventListener("animationend", hideAsideMenu);
 /* ----------------------------------------------------------------------------------------------------------------- */
 
 /* Inicio al cargar la página */

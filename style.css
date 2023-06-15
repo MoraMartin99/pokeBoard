@@ -94,6 +94,8 @@ html {
     --asideButtonContainerGap: 1.1406844106463878em;
     --asideButtonsGap: 0.7604562737642585em;
     --asideButtonsIconSize: 1.6798479087452471em;
+    --loadingPokeballDuration: 3s;
+    --slideInDuration: 0.25s;
     font-size: 100%;
 }
 
@@ -575,7 +577,7 @@ main {
 
 .loadingImage {
     animation-name: loadingPokeball;
-    animation-duration: 3s;
+    animation-duration: var(--loadingPokeballDuration);
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -616,6 +618,15 @@ aside {
     position: absolute;
     background-color: var(--asideBGColor);
     z-index: 1;
+    animation-name: fadeIn;
+    animation-duration: var(--slideInDuration);
+    animation-timing-function: linear;
+}
+
+aside.fadeOut {
+    animation-name: fadeOut;
+    animation-duration: var(--slideInDuration);
+    animation-timing-function: linear;
 }
 
 #asideMenuContainer {
@@ -629,6 +640,15 @@ aside {
     grid-template-areas:
         ". . arrow"
         "menu . .";
+    animation-name: slideIn;
+    animation-duration: var(--slideInDuration);
+    animation-timing-function: linear;
+}
+
+.slideOut#asideMenuContainer {
+    animation-name: slideOut;
+    animation-duration: var(--slideInDuration);
+    animation-timing-function: linear;
 }
 
 #returnButton {
@@ -708,6 +728,37 @@ aside {
 
 #asidePrivacyButton::before {
     background-image: url("./img/privacy\ mobile.svg");
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        background-color: transparent;
+    }
+    to {
+        background-color: #0000007a;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        background-color: transparent;
+    }
 }
 
 /* ----------------------------------------------------------------------------------------------- */
@@ -1036,11 +1087,13 @@ footer {
     #asideMenu {
         position: static;
         display: grid;
+        animation-name: none;
     }
 
     #asideMenuContainer {
         display: block;
         background-color: var(--sidePanelBGColor);
+        animation-name: none;
     }
 
     #asideButtonContainer {
