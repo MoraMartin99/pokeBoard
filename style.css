@@ -481,7 +481,6 @@ main {
 
 .itemImage {
     grid-area: image;
-    /* width: var(--itemImageWidth); */
     width: 100%;
 }
 
@@ -674,59 +673,63 @@ aside.fadeOut {
 .asideButtons {
     font-size: inherit;
     background-color: inherit;
-    display: flex;
-    flex-direction: row;
-    gap: var(--asideButtonsGap);
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-template-rows: 1fr;
+    grid-template-areas: "icon text";
+    column-gap: var(--asideButtonsGap);
     align-items: center;
 }
 
-.asideButtons::before {
-    font-size: inherit;
+.asideButtons::after {
     content: "";
+    grid-area: icon;
+    font-size: inherit;
     width: var(--asideButtonsIconSize);
     height: var(--asideButtonsIconSize);
     background-size: 100%;
 }
 
 .asideButtonLabel {
+    grid-area: text;
     font-size: inherit;
     color: var(--sectionTittleColor);
     font-weight: 700;
 }
 
-#asideHomeButton::before {
+#asideHomeButton::after {
     background-image: url("./img/home\ mobile.svg");
 }
 
-#asideProfileButton::before {
+#asideProfileButton::after {
     background-image: url("./img/profile\ mobile.svg");
 }
 
-#asideMessagesButton::before {
+#asideMessagesButton::after {
     background-image: url("./img/message\ mobile.svg");
 }
 
-#asideHistoryButton::before {
+#asideHistoryButton::after {
     background-image: url("./img/history\ mobile.svg");
 }
 
-#asideSettingsButton::before {
+#asideSettingsButton::after {
     background-image: url("./img/settings\ mobile.svg");
 }
 
-#asideTasksButton::before {
+#asideTasksButton::after {
     background-image: url("./img/task\ mobile.svg");
 }
 
-#asideSupportButton::before {
+#asideSupportButton::after {
     background-image: url("img/support\ mobile.svg");
 }
 
-#asideCommunitiesButton::before {
+#asideCommunitiesButton::after {
     background-image: url("./img/communities\ mobile.svg");
 }
 
-#asidePrivacyButton::before {
+#asidePrivacyButton::after {
     background-image: url("./img/privacy\ mobile.svg");
 }
 
@@ -852,6 +855,8 @@ footer {
         --topPanelBGColor: white;
         --topUserNameColor: #270e4e;
         --githubTitleColor: white;
+        --bottomButtonHoverBGColor: #8340d9;
+        --asideButtonsHoverBGColor: #6e3fb6;
         --sidePanelWidth: clamp(15.875rem, -0.26785714285714235rem + 25.223214285714285vw, 30rem);
         --homeTitleFontSize: clamp(1.325625rem, -0.01651785714285703rem + 2.0970982142857144vw, 2.5rem);
         --homeLogoSize: calc(1em * (49.85 / 21.21));
@@ -886,9 +891,13 @@ footer {
         --headerMinHeight: clamp(133px, 38.14285714285715px + 9.263392857142856vw, 216px);
         --asideMenuContainerPadding: 0px;
         --asideMenuContainerFontSize: clamp(1.0625rem, 0.4910714285714286rem + 0.8928571428571428vw, 1.5625rem);
-        --asideButtonContainerGap: calc(1em * (10 / 17));
-        --asideButtonContainerPaddingTop: clamp(0px, 3.4901785714285714rem + -2.9084821428571423vw, 26.06px);
-        --asideButtonContainerPaddingLeft: clamp(2.25rem, -0.03571428571428559rem + 3.571428571428571vw, 4.25rem);
+        --asideButtonContainerGap: calc((1em * (15.57 / 17)) - (2 * var(--asideButtonsPaddingBlock)));
+        --asideButtonContainerPaddingTop: calc(
+            clamp(0px, 3.4901785714285714rem + -2.9084821428571423vw, 26.06px) - var(--asideButtonsPaddingBlock)
+        );
+        --asideButtonContainerPaddingLeft: calc(
+            clamp(2.25rem, -0.03571428571428559rem + 3.571428571428571vw, 4.25rem) - var(--asideButtonsPaddingInline)
+        );
         --githubTitleFontSize: clamp(1.125rem, 0.625rem + 0.78125vw, 1.5625rem);
         --githubLinkIconSize: clamp(1.3925rem, -0.016071428571428292rem + 2.2008928571428568vw, 2.625rem);
         --githubLinkPadding: 0px;
@@ -904,6 +913,9 @@ footer {
         --pokemonSectionTitlePaddingLeft: 60px;
         --titleAreaMinHeight: 89px;
         --itemNearbyCardBaseWidth: clamp(13.333125rem, 8.463839285714288rem + 7.608258928571426vw, 17.59375rem);
+        --asideButtonsPaddingBlock: calc((5.3 / 17) * 1em);
+        --asideButtonsPaddingInline: calc((11.5 / 17) * 1em);
+        --asideButtonsBorderRadius: calc((20 / 25) * 1em);
     }
 
     #menuButton,
@@ -1079,6 +1091,11 @@ footer {
         font-weight: 700;
         color: var(--bottomButtonColor);
         background-color: var(--bottomButtonBGColor);
+        cursor: pointer;
+    }
+
+    .bottomButton:hover {
+        background-color: var(--bottomButtonHoverBGColor);
     }
     /* ----------------------------------------- */
 
@@ -1099,7 +1116,7 @@ footer {
     #asideButtonContainer {
         width: var(--sidePanelWidth);
         height: 100%;
-        grid-template-columns: 1fr;
+        grid-template-columns: max-content;
         grid-template-rows: repeat(6, max-content) 1fr repeat(3, max-content);
         grid-template-areas:
             "Home"
@@ -1114,13 +1131,29 @@ footer {
             "Privacy";
         padding-top: var(--asideButtonContainerPaddingTop);
         padding-left: var(--asideButtonContainerPaddingLeft);
+        justify-items: start;
+    }
+
+    .asideButtons {
+        padding-block: var(--asideButtonsPaddingBlock);
+        padding-inline: var(--asideButtonsPaddingInline);
+        cursor: pointer;
+    }
+
+    .asideButtons:hover {
+        background-color: var(--asideButtonsHoverBGColor);
+        border-radius: var(--asideButtonsBorderRadius);
+    }
+
+    .asideButtonLabel {
+        color: white;
     }
 
     #asideHomeButton {
         grid-area: Home;
     }
 
-    #asideHomeButton::before {
+    #asideHomeButton::after {
         background-image: url("./img/home.svg");
     }
 
@@ -1128,7 +1161,7 @@ footer {
         grid-area: Profile;
     }
 
-    #asideProfileButton::before {
+    #asideProfileButton::after {
         background-image: url("./img/profile.svg");
     }
 
@@ -1136,7 +1169,7 @@ footer {
         grid-area: Messages;
     }
 
-    #asideMessagesButton::before {
+    #asideMessagesButton::after {
         background-image: url("./img/message.svg");
     }
 
@@ -1144,7 +1177,7 @@ footer {
         grid-area: History;
     }
 
-    #asideHistoryButton::before {
+    #asideHistoryButton::after {
         background-image: url("./img/history.svg");
     }
 
@@ -1152,7 +1185,7 @@ footer {
         grid-area: Settings;
     }
 
-    #asideSettingsButton::before {
+    #asideSettingsButton::after {
         background-image: url("./img/settings.svg");
     }
 
@@ -1160,7 +1193,7 @@ footer {
         grid-area: Tasks;
     }
 
-    #asideTasksButton::before {
+    #asideTasksButton::after {
         background-image: url("./img/task.svg");
     }
 
@@ -1168,7 +1201,7 @@ footer {
         grid-area: Support;
     }
 
-    #asideSupportButton::before {
+    #asideSupportButton::after {
         background-image: url("./img/support.svg");
     }
 
@@ -1176,7 +1209,7 @@ footer {
         grid-area: Communities;
     }
 
-    #asideCommunitiesButton::before {
+    #asideCommunitiesButton::after {
         background-image: url("./img/communities.svg");
     }
 
@@ -1184,13 +1217,10 @@ footer {
         grid-area: Privacy;
     }
 
-    #asidePrivacyButton::before {
+    #asidePrivacyButton::after {
         background-image: url("./img/privacy.svg");
     }
 
-    .asideButtonLabel {
-        color: white;
-    }
     /* ----------------------------------------- */
 
     /* Footer */
